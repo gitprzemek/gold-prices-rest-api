@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gold prices</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <section class="main-container">
+        <h1>Gold prices</h1>
+        <p>Please choose a date range for gold prices</p>
+        <form class="date-container">
+            <div class="date-container__element">
+                <label for="date-from" class="date-container__label">Date from:</label>
+                <input type="text" class="date-container__input" id="date-from" name="date-from" required>
+            </div>
+            <div class="date-container__element">
+                <label for="date-to" class="date-container__label">Date to:</label>
+                <input type="text" class="date-container__input" id="date-to" name="date-to" required>
+            </div>
+            <button type='button' class="date-container__element date-container__element--btn">SHOW TABLE</button>
+
+        </form>
+
+        <!-- START TABLE -->
+        <div class="table-container">
+            <table id="statTable" class="table">
+                <thead>
+                    <tr>
+                        <th id="dateBtn" class="table__title"><button type='button' class="table__btn"><span>&#708;</span>Date<span>&#709;</span></button></th>
+                        <th id="priceBtn" class="table__title"><button type='button' class="table__btn"><span>&#708;</span>Price<span>&#709;</span></button></th>
+                    </tr>
+                    <tr>
+                        <td class="table__inputs"><input type="text" id="filterDate" placeholder="Filter..." title="Type in a name"></td>
+                        <td class="table__inputs"><input type="text" id="filterPrice" placeholder="Filter..." title="Type in a name"></td>
+                    </tr>
+                </thead>
+                <tbody id="tableBody" class="table__body">
+                    <tr>
+                        <td>2018-02-02</td>
+                        <td>122.90</td>
+                    </tr>
+                    <tr>
+                        <td>2018-02-02</td>
+                        <td>101.90</td>
+                    </tr>
+                    <tr>
+                        <td>2017-03-01</td>
+                        <td>111.90</td>
+                    </tr>
+                    <tr>
+                        <td>2014-11-02</td>
+                        <td>133.90</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="stat-container">
+            <div class="stat-container__box">
+                <div class="stat-container__elem stat-container__elem--title">Value min:</div>
+                <div class="stat-container__elem" id="minPrice"></div>
+                <div class="stat-container__elem" id="minPriceDate"></div>
+            </div>
+            <div class="stat-container__box">
+                <div class="stat-container__elem stat-container__elem--title">Value max:</div>
+                <div class="stat-container__elem" id="maxPrice"></div>
+                <div class="stat-container__elem" id="maxPriceDate"></div>
+            </div>
+            <div class="stat-container__box">
+                <div class="stat-container__elem stat-container__elem--title">Median:</div>
+                <div class="stat-container__elem" id="median"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
